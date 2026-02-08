@@ -57,3 +57,12 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+Chuleta para POSTMAN
+Método	URL	                                        Body (JSON)
+GET	    http://localhost/api/reparaciones	        Vacío
+POST	http://localhost/api/reparaciones	        {"marca_id":1, "tecnico_id":1, "cliente_id":1, "descripcion":"Fallo sensor"}
+GET	    http://localhost/api/reparaciones/1	        Vacío
+PUT	    http://localhost/api/reparaciones/1	        {"estado":"terminado"}
+DELETE	http://localhost/api/reparaciones/1	        Vacío
+
