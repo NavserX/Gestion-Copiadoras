@@ -1,0 +1,133 @@
+{
+  "info": {
+    "_postman_id": "5835a505-3c79-4613-8489-09416ba594e4",
+    "name": "Gestion-Copiadoras",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "49509548",
+    "_collection_link": "https://go.postman.co/collection/49509548-5835a505-3c79-4613-8489-09416ba594e4?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Crear una Reparación",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"marca_id\": 1,\r\n    \"tecnico_id\": 1,\r\n    \"cliente_id\": 1,\r\n    \"descripcion\": \"Prueba inicial de sistema\",\r\n    \"estado\": \"pendiente\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost/api/reparaciones",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "path": [
+            "api",
+            "reparaciones"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Listar Reparaciones",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost/api/reparaciones",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "path": [
+            "api",
+            "reparaciones"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Listar una Reparación",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost/api/reparaciones/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "path": [
+            "api",
+            "reparaciones",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Actualiza una Reparación",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"estado\":\"terminado\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost/api/reparaciones/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "path": [
+            "api",
+            "reparaciones",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Borra una Reparación",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost/api/reparaciones/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "path": [
+            "api",
+            "reparaciones",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
