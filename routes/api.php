@@ -3,29 +3,38 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\ReparacionController;
+use App\Http\Controllers\Api\AuthController;
 
-Route::get('/user', function (Request $request) {
-    return $request->user();
-})->middleware('auth:sanctum');
+// --- RUTAS PÚBLICAS ---
+// Cualquiera puede intentar hacer login para obtener su "llave" (token)
+Route::post('/login', [AuthController::class, 'login']);
 
+// --- RUTAS PROTEGIDAS ---
+// Todo lo que esté aquí dentro requiere que el usuario estés identificado
+Route::middleware('auth:sanctum')->group(function () {
 
-/*
-|--------------------------------------------------------------------------
-| API Routes - Gestión de Reparaciones de Ofimática Digital Soluciones
-|--------------------------------------------------------------------------
-*/
+    // Ruta para ver los datos del usuario actual
+    Route::get('/user', function (Request $request) {
+        return $request->user();
+    });
 
-// 1. Obtengo todas las reparaciones (GET)
-Route::get('/reparaciones', [ReparacionController::class, 'index']);
+    /*
+    | Gestión de Reparaciones de Ofimática Digital Soluciones
+    */
 
-// 2. Creo una nueva reparación (POST)
-Route::post('/reparaciones', [ReparacionController::class, 'store']);
+    // 1. Obtengo todas las reparaciones (GET)
+    Route::get('/reparaciones', [ReparacionController::class, 'index']);
 
-// 3. Obtengo una reparación específica por ID (GET)
-Route::get('/reparaciones/{id}', [ReparacionController::class, 'show']);
+    // 2. Creo una nueva reparación (POST)
+    Route::post('/reparaciones', [ReparacionController::class, 'store']);
 
-// 4. Actualizo una reparación existente (PUT)
-Route::put('/reparaciones/{id}', [ReparacionController::class, 'update']);
+    // 3. Obtengo una reparación específica por ID (GET)
+    Route::get('/reparaciones/{id}', [ReparacionController::class, 'show']);
 
-// 5. Elimino una reparación (DELETE)
-Route::delete('/reparaciones/{id}', [ReparacionController::class, 'destroy']);
+    // 4. Actualizo una reparación existente (PUT)
+    Route::put('/reparaciones/{id}', [ReparacionController::class, 'update']);
+
+    // 5. Elimino una reparación (DELETE)
+    Route::delete('/reparaciones/{id}', [ReparacionController::class, 'destroy']);
+
+});

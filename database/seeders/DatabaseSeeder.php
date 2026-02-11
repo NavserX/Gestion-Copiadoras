@@ -7,6 +7,7 @@ namespace Database\Seeders;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 // Creo el seeder principal de la aplicación
 class DatabaseSeeder extends Seeder
@@ -20,6 +21,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        //Creo el usuario administrador para el Login
+        User::create([
+            'name' => 'Admin Taller',
+            'email' => 'admin@od.com',
+            'password' => Hash::make('34655944'),
+        ]);
+
         // 1. Inserto las marcas
         // Cada marca solo necesita el nombre
         \App\Models\Marca::create(['nombre' => 'Konica']);
