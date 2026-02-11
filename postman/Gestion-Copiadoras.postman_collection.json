@@ -1,15 +1,25 @@
 {
   "info": {
-    "_postman_id": "5835a505-3c79-4613-8489-09416ba594e4",
+    "_postman_id": "87b381ac-b6e8-44ec-8b74-6eb410411f35",
     "name": "Gestion-Copiadoras",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "_exporter_id": "49509548",
-    "_collection_link": "https://go.postman.co/collection/49509548-5835a505-3c79-4613-8489-09416ba594e4?source=collection_link"
+    "_collection_link": "https://go.postman.co/collection/49509548-87b381ac-b6e8-44ec-8b74-6eb410411f35?source=collection_link"
   },
   "item": [
     {
       "name": "Crear una Reparación",
       "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "1|AMvAP9AGbs2mJzMveu8v9EkARSqXJXgz59aRk6a44029356e",
+              "type": "string"
+            }
+          ]
+        },
         "method": "POST",
         "header": [
           {
@@ -44,6 +54,16 @@
     {
       "name": "Listar Reparaciones",
       "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "1|AMvAP9AGbs2mJzMveu8v9EkARSqXJXgz59aRk6a44029356e",
+              "type": "string"
+            }
+          ]
+        },
         "method": "GET",
         "header": [],
         "url": {
@@ -66,7 +86,7 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "http://localhost/api/reparaciones/1",
+          "raw": "http://localhost/api/reparaciones/5",
           "protocol": "http",
           "host": [
             "localhost"
@@ -74,7 +94,7 @@
           "path": [
             "api",
             "reparaciones",
-            "1"
+            "5"
           ]
         }
       },
@@ -95,7 +115,7 @@
           }
         },
         "url": {
-          "raw": "http://localhost/api/reparaciones/1",
+          "raw": "http://localhost/api/reparaciones/5",
           "protocol": "http",
           "host": [
             "localhost"
@@ -103,7 +123,7 @@
           "path": [
             "api",
             "reparaciones",
-            "1"
+            "5"
           ]
         }
       },
@@ -115,7 +135,7 @@
         "method": "DELETE",
         "header": [],
         "url": {
-          "raw": "http://localhost/api/reparaciones/1",
+          "raw": "http://localhost/api/reparaciones/5",
           "protocol": "http",
           "host": [
             "localhost"
@@ -123,7 +143,35 @@
           "path": [
             "api",
             "reparaciones",
-            "1"
+            "5"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\": \"admin@od.com\",\r\n    \"password\": \"34655944\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost/api/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "path": [
+            "api",
+            "login"
           ]
         }
       },
